@@ -47,4 +47,20 @@ public class SenderTabelModel extends AbstractTableModel{
         this.fireTableRowsInserted(sender.size()-1, sender.size()-1);
     }
     
+    public void hide()
+    {
+     colNames = new String [2];
+     colNames[1] = "Sender";
+       colNames[2] = "Frequenz";      
+        this.fireTableStructureChanged();
+    }
+    
+    public void show()
+    {
+    colNames = new String [2];
+     colNames[1] = "Sender";
+       colNames[2] = "Frequenz";   
+        colNames[2] = "Band";  
+        this.fireTableStructureChanged();
+    }
 }
