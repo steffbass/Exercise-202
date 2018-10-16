@@ -5,7 +5,9 @@
  */
 package bl;
 
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
@@ -27,6 +29,20 @@ public class SenderTabelRenderer implements TableCellRenderer{
             case 1: label.setText(s.getBand()+ ""); break;
             case 2: label.setText(s.getFreq()+ ""); break;
     }
+        
+         label.setFont(new Font("Arial", Font.ITALIC, 14));
+        if(isSelected){
+            label.setForeground(Color.WHITE);
+            label.setBackground(Color.black);
+        }
+        else{
+            label.setForeground(Color.LIGHT_GRAY);
+            if(s.getBand().equals("FM")){
+                label.setBackground(Color.RED);
+            }
+            else label.setBackground(Color.blue);
+        } 
+        
         return label;
     
 }

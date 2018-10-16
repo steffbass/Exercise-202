@@ -35,4 +35,11 @@ public class SenderTabelModel extends AbstractTableModel{
         
     }
     
+    public void add(Sender s)
+    {
+     sender.add(s);
+    // Collections.sort(sender, new SortByFrequency());
+        this.fireTableRowsInserted(sender.size()-1, sender.size()-1);
+    }
+    
 }

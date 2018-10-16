@@ -33,5 +33,9 @@ public class Sender {
         return band;
     }
     
+     @Override
+    public String toString() {
+            return String.format("%s,%.2f,%s", sender, freq, band);
+    }
      
 }

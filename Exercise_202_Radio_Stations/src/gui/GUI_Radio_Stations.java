@@ -6,6 +6,7 @@
 package gui;
 
 import bl.SenderTabelModel;
+import bl.SenderTabelRenderer;
 
 
 /**
@@ -22,13 +23,15 @@ public class GUI_Radio_Stations extends javax.swing.JFrame {
     public GUI_Radio_Stations() {
         initComponents();
         
-
+tabel.setDefaultRenderer(Object.class, new SenderTabelRenderer());
            tabel.setComponentPopupMenu(PopupMenu);
            jScrollPane1.setComponentPopupMenu(PopupMenu);
             tabel.setModel(bl);
-    
+            visible();
+            
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,16 +98,30 @@ public class GUI_Radio_Stations extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void visible()
+    {
+     if(bl.getRowCount() == 0)
+    {
+        System.out.println("hi");
+     pop_hide.setVisible(false);
+        System.out.println("disable");
+     pop_anz.setVisible(false);
+    }
+    }
     private void pop_hinzuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hinzuActionPerformed
         // TODO add your handling code here:
         //hinzu
         AddDialog_Radio dialog = new AddDialog_Radio(this, true);
         dialog.setVisible(true);
+         if(dialog.isOkay()){
+            bl.add(dialog.getSender());
+        visible();
     }//GEN-LAST:event_pop_hinzuActionPerformed
 
     private void pop_hideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hideActionPerformed
         // TODO add your handling code here:
         //hide
+    
     }//GEN-LAST:event_pop_hideActionPerformed
 
     private void pop_anzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_anzActionPerformed

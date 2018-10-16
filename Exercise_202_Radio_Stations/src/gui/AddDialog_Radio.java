@@ -153,6 +153,14 @@ public class AddDialog_Radio extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_btcancleActionPerformed
 
+    public Sender getSender() {
+        return sender;
+    }
+
+    public boolean isOkay() {
+        return okay;
+    }
+
     /**
      * @param args the command line arguments
      */
