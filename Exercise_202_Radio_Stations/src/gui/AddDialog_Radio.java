@@ -5,6 +5,9 @@
  */
 package gui;
 
+import bl.Sender;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author stefan
@@ -14,6 +17,9 @@ public class AddDialog_Radio extends javax.swing.JDialog {
     /**
      * Creates new form AddDialog_Radio
      */
+    private Sender sender;
+    private boolean okay;
+    
     public AddDialog_Radio(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -42,6 +48,11 @@ public class AddDialog_Radio extends javax.swing.JDialog {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         btok.setText("OK");
+        btok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btokActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -51,6 +62,11 @@ public class AddDialog_Radio extends javax.swing.JDialog {
         getContentPane().add(btok, gridBagConstraints);
 
         btcancle.setText("Cancle");
+        btcancle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcancleActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -115,6 +131,27 @@ public class AddDialog_Radio extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btokActionPerformed
+     
+      try{
+       double fre = Double.parseDouble(tffre.getText());
+            Sender s= new Sender(tfname.getText(),fre, tfband.getText());
+            okay=true;
+            System.out.println(s);
+            this.dispose();
+            
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, "Fehler beim Hinzufügen");
+        }
+    }//GEN-LAST:event_btokActionPerformed
+
+    private void btcancleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcancleActionPerformed
+        // TODO add your handling code here:
+        okay = false;
+        System.out.println(" cancle works");
+        this.dispose();
+    }//GEN-LAST:event_btcancleActionPerformed
 
     /**
      * @param args the command line arguments

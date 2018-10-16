@@ -5,6 +5,9 @@
  */
 package gui;
 
+import bl.SenderTabelModel;
+
+
 /**
  *
  * @author stefan
@@ -14,8 +17,16 @@ public class GUI_Radio_Stations extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Radio_Stations
      */
+      private SenderTabelModel bl = new SenderTabelModel(); 
+     
     public GUI_Radio_Stations() {
         initComponents();
+        
+
+           tabel.setComponentPopupMenu(PopupMenu);
+           jScrollPane1.setComponentPopupMenu(PopupMenu);
+            tabel.setModel(bl);
+    
     }
 
     /**
@@ -36,12 +47,27 @@ public class GUI_Radio_Stations extends javax.swing.JFrame {
         tabel = new javax.swing.JTable();
 
         pop_hinzu.setText("Hinzufügen");
+        pop_hinzu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pop_hinzuActionPerformed(evt);
+            }
+        });
         PopupMenu.add(pop_hinzu);
 
         pop_hide.setText("Band verstecken");
+        pop_hide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pop_hideActionPerformed(evt);
+            }
+        });
         PopupMenu.add(pop_hide);
 
         pop_anz.setText("Band anzeigen");
+        pop_anz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pop_anzActionPerformed(evt);
+            }
+        });
         PopupMenu.add(pop_anz);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +94,23 @@ public class GUI_Radio_Stations extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pop_hinzuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hinzuActionPerformed
+        // TODO add your handling code here:
+        //hinzu
+        AddDialog_Radio dialog = new AddDialog_Radio(this, true);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_pop_hinzuActionPerformed
+
+    private void pop_hideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hideActionPerformed
+        // TODO add your handling code here:
+        //hide
+    }//GEN-LAST:event_pop_hideActionPerformed
+
+    private void pop_anzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_anzActionPerformed
+        // TODO add your handling code here:
+        //anz
+    }//GEN-LAST:event_pop_anzActionPerformed
 
     /**
      * @param args the command line arguments
