@@ -17,7 +17,7 @@ public class AddDialog_Radio extends javax.swing.JDialog {
     /**
      * Creates new form AddDialog_Radio
      */
-    private Sender sender;
+    private Sender s;
     private boolean okay;
     
     public AddDialog_Radio(java.awt.Frame parent, boolean modal) {
@@ -136,7 +136,7 @@ public class AddDialog_Radio extends javax.swing.JDialog {
      
       try{
        double fre = Double.parseDouble(tffre.getText());
-            Sender s= new Sender(tfname.getText(),fre, tfband.getText());
+             s= new Sender(tfname.getText(),fre, tfband.getText());
             okay=true;
             System.out.println(s);
             this.dispose();
@@ -154,7 +154,7 @@ public class AddDialog_Radio extends javax.swing.JDialog {
     }//GEN-LAST:event_btcancleActionPerformed
 
     public Sender getSender() {
-        return sender;
+        return s;
     }
 
     public boolean isOkay() {

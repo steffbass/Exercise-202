@@ -128,12 +128,13 @@ tabel.setDefaultRenderer(Object.class, new SenderTabelRenderer());
     private void pop_hideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hideActionPerformed
         // TODO add your handling code here:
         //hide
-    
+    bl.hide();
     }//GEN-LAST:event_pop_hideActionPerformed
 
     private void pop_anzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_anzActionPerformed
         // TODO add your handling code here:
         //anz
+        bl.show();
     }//GEN-LAST:event_pop_anzActionPerformed
 
     /**
