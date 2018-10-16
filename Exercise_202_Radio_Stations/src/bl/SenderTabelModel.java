@@ -5,7 +5,7 @@
  */
 package bl;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class SenderTabelModel extends AbstractTableModel{
     
-   LinkedList sender = new LinkedList();
+   private ArrayList<Sender> sender = new ArrayList<>();
     private static String[] colNames = {"Sender","Frequenz","Band"};
    
 
@@ -33,6 +33,11 @@ public class SenderTabelModel extends AbstractTableModel{
         Sender s = (Sender) sender.get(rowIndex);
         return s;
         
+    }
+    
+     @Override
+    public String getColumnName(int i) {
+        return colNames[i];
     }
     
     public void add(Sender s)

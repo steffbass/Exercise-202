@@ -20,14 +20,16 @@ public class SenderTabelRenderer implements TableCellRenderer{
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+      
         Sender s = (Sender)value;
         JLabel label = new JLabel();
         label.setOpaque(true);
         
-        switch(column){
+        System.out.println("hi");
+       switch(column){
             case 0: label.setText(s.getSender()); break;
-            case 1: label.setText(s.getBand()+ ""); break;
-            case 2: label.setText(s.getFreq()+ ""); break;
+            case 1: label.setText(s.getFreq()+""); break;
+            case 2: label.setText(s.getBand()); break;  
     }
         
          label.setFont(new Font("Arial", Font.ITALIC, 14));

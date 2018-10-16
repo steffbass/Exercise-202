@@ -102,11 +102,17 @@ tabel.setDefaultRenderer(Object.class, new SenderTabelRenderer());
     {
      if(bl.getRowCount() == 0)
     {
-        System.out.println("hi");
-     pop_hide.setVisible(false);
-        System.out.println("disable");
+        
+     pop_hide.setVisible(false);   
      pop_anz.setVisible(false);
+     System.out.println("disable");
     }
+     else
+     { 
+      pop_hide.setVisible(true);   
+     pop_anz.setVisible(true);
+     System.out.println("enable");
+     }
     }
     private void pop_hinzuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hinzuActionPerformed
         // TODO add your handling code here:
@@ -116,6 +122,7 @@ tabel.setDefaultRenderer(Object.class, new SenderTabelRenderer());
          if(dialog.isOkay()){
             bl.add(dialog.getSender());
         visible();
+         }
     }//GEN-LAST:event_pop_hinzuActionPerformed
 
     private void pop_hideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pop_hideActionPerformed
@@ -155,6 +162,7 @@ tabel.setDefaultRenderer(Object.class, new SenderTabelRenderer());
             java.util.logging.Logger.getLogger(GUI_Radio_Stations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

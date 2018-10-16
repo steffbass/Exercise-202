@@ -11,9 +11,9 @@ package bl;
  */
 public class Sender {
     
-    private String sender;
-    private double freq;
-    private String band;
+    protected String sender;
+    protected double freq;
+    protected String band;
 
     public Sender(String sender, double freq, String band) {
         this.sender = sender;
