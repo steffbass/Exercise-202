@@ -136,10 +136,12 @@ public class AddDialog_Radio extends javax.swing.JDialog {
      
       try{
        double fre = Double.parseDouble(tffre.getText());
-             s= new Sender(tfname.getText(),fre, tfband.getText());
+       String input = tfband.getText();
+            if(input.equals("AM") || input.equals("FM")){
+                s= new Sender(tfname.getText(),fre, tfband.getText());
             okay=true;
             System.out.println(s);
-            this.dispose();
+            this.dispose();} else{JOptionPane.showMessageDialog(this, "Das Band darf nur FM oder AM sein");}
             
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Fehler beim Hinzufügen");
@@ -149,7 +151,6 @@ public class AddDialog_Radio extends javax.swing.JDialog {
     private void btcancleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcancleActionPerformed
         // TODO add your handling code here:
         okay = false;
-        System.out.println(" cancle works");
         this.dispose();
     }//GEN-LAST:event_btcancleActionPerformed
 
